@@ -10,6 +10,9 @@ use App\Http\Controllers\Admin\InquiryController as AdminInquiryController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
+// Health check
+Route::get('/health', fn () => response()->json(['status' => 'ok']))->name('health');
+
 // Public routes
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/inventory', [InventoryController::class, 'index'])->name('inventory');
